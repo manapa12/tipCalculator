@@ -20,8 +20,12 @@ let reset = document.getElementById("reset-button");
 function totalPerPerson(){
     let amount = parseInt(bill.value);
     let peopleNumber = parseInt(numberOfPeople.value);
-    let total = amount / peopleNumber;
-    totalAmount.innerHTML = "<h3>${total}</h3>";
+    let total = Number((amount / peopleNumber).toFixed(2));
+    if(bill.value === "" || numberOfPeople.value === ""){
+        totalAmount.innerHTML = `$0.00`; 
+    }else{
+    totalAmount.innerHTML = `$${total}`;
+    }
 }
 
 /*this function calculates the tip per person*/ 
@@ -32,14 +36,21 @@ const calculatePercent = (event) => {
     let myTip = amount * percentInNumber;
 }
 
+
+
+/**Here we have the event listeners */
+
+bill.addEventListener("input",totalPerPerson);
+numberOfPeople.addEventListener("input",totalPerPerson);
+
+
 fivePercent.addEventListener("click", calculatePercent);
 tenPercent.addEventListener("click", calculatePercent);
 fifteenPercent.addEventListener("click", calculatePercent);
 twentyfivePercent.addEventListener("click", calculatePercent);
 fiftyPercent.addEventListener("click", calculatePercent);
 
-
-
+/**-------------------------------------- */
 
 
 
