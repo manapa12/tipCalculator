@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/resources/css/style.css" />
+    <title>Tip calculator</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="calculator-container">
+        <div class="tip-settings-container">
+          <div class="total-bill-container">
+            <label for="bill">Bill</label><br />
+            <input type="text" id="bill-total" name="bill" />
+          </div>
+          <div class="tip-percent-container">
+            <h6>Select Tip %</h6>
+            <div class="tip-percentages-grid">
+              <button class="button-style" id="five-percent" value="0.05">
+                5%
+              </button>
+              <button class="button-style" id="ten-percent" value="0.1">
+                10%
+              </button>
+              <button class="button-style" id="fifteen-percent" value="0.15">
+                15%
+              </button>
+              <button class="button-style" id="twentyfive-percent" value="0.25">
+                25%
+              </button>
+              <button class="button-style" id="fifty-percent" value="0.5">
+                50%
+              </button>
+              <input type="text" name="custom-tip" id="custom-tip-percent" />
+            </div>
+          </div>
+          <div class="people-container">
+            <label for="number-people">Number of People</label><br />
+            <input type="text" name="number-people" id="numer-people" />
+          </div>
+        </div>
+        <div class="results-container">
+          <div class="tip-amount-container">
+            <div class="tip-amount">
+              <div class="info-of-money">
+                <h6>Tip Amount</h6>
+                <p>/ person</p>
+              </div>
+              <div class="money-display">
+                <h3 id="tip-amout-display">$0.00</h3>
+              </div>
+            </div>
+            <div class="tip-amount">
+              <div class="info-of-money">
+                <h6>Total</h6>
+                <p>/ person</p>
+              </div>
+              <div class="money-display">
+                <h3 id="total-amount-per-person">$0.00</h3>
+              </div>
+            </div>
+          </div>
+          <div class="reset-button-container">
+            <button id="reset-button">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

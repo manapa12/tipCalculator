@@ -1,0 +1,183 @@
+body{
+    background-color: rgba(137, 43, 226, 0.109);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.calculator-container{
+    /*padding: 1.5rem 2rem; padding: 6rem 10rem;*/
+    display: grid;
+    flex-direction: row;
+    grid-template-columns: repeat(2,1fr);
+    background-color: white;
+    padding:1.5rem 2rem;
+    justify-content: space-around;
+    border-radius: 20px;
+    gap: 3rem;
+    padding-right: 0,5rem;
+}
+
+@media only screen and (max-width: 505px){
+    .calculator-container{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 90%;
+    }
+    .tip-percentages-grid{
+      justify-content: center;
+    }
+}
+
+
+
+/*Styling of first part*/
+
+.tip-settings-container{
+    padding: 2rem 0; 
+}
+
+/*-----------------------*/
+
+/*STYLING OF BILL CONTAINER*/
+
+.total-bill-container{
+    max-width: 100%;
+}
+
+.total-bill-container label{
+    font-size: 0.8rem;
+}
+
+#bill-total{
+    margin-top: 0.2rem;
+    padding: 0.4rem;
+    font-size: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/*----------------------------*/
+
+
+/*STYLING OF TIP% CONTAINER*/
+.tip-percent-container{
+  width: 100%;
+}
+
+.tip-percent-container h6{
+    margin-bottom: 0.8rem;
+}
+
+.tip-percentages-grid{
+    display: grid;
+    grid-template-columns: repeat(3,4.5rem); 
+    grid-auto-rows: repeat(2,1fr);
+    row-gap: 0.5rem;
+    column-gap: 0.5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.button-style{
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    background-color: rgba(137, 43, 226, 0.591);
+    color: white;
+    border: none;
+}
+
+.button-style:hover{
+    background-color: rgb(73, 1, 140);
+    cursor: pointer;
+}
+
+
+
+
+/*------------------------*/
+
+
+/*STYLING OF NO.PEOPLE CONTAINER*/
+
+.people-container{
+    font-size: 0.8rem;
+}
+
+#numer-people{
+    margin-top: 0.2rem;
+    padding: 0.4rem;
+    font-size: 0.8rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/*-----------------------------*/
+
+
+/*STYLE FOR RIGHT CONTAINER*/
+
+.results-container{
+    background-color: rgba(137, 43, 226, 0.591);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+}
+
+.tip-amount{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-of-money h6{
+  margin-bottom: 0;
+  font-weight: 900;
+  color: white;
+}
+
+.info-of-money p{
+    margin-top: 0;
+    font-size: 0.7rem;
+    color:rgb(137, 43, 226);
+}
+
+.money-display{
+    margin-top: 1rem;
+    color: rgb(73, 1, 140);
+}
+
+
+.reset-button-container{
+    justify-self: center;
+    margin-bottom: 1.5rem;
+}
+
+#reset-button{
+    background-color: rgb(73, 1, 140);
+    color: rgb(221, 214, 227);
+    padding: 0.5rem 1rem ;
+    width: 100%;
+    border: none;
+   
+}
+
+#reset-button:hover{
+    cursor: pointer;
+}
+
+
+/*---------------------------*/
