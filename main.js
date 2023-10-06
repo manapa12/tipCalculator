@@ -7,7 +7,7 @@ let twentyfivePercent = document.getElementById("twentyfive-percent");
 let fiftyPercent = document.getElementById("fifty-percent");
 let customTip = document.getElementById("custom-tip-percent");
 
-let classPercent = document.getElementsByClassName("button-style")
+let classPercent = document.querySelectorAll(".button-style")
 let numberOfPeople = document.getElementById("numer-people");
 
 let tipAmount = document.getElementById("tip-amout-display");
@@ -29,26 +29,33 @@ function totalPerPerson(){
 }
 
 /*this function calculates the tip per person*/ 
-const calculatePercent = (event) => {
-    let amount = parseInt(bill.value);
-    let percentInNumber = parseInt(event.target.value);
-    console.log(percentInNumber);
-    let myTip = amount * percentInNumber;
-}
-
-
+classPercent.forEach(button => {
+    button.addEventListener("click",function(event) {
+        let tipPercent = parseFloat(event.target.value);
+        let amount = parseInt(bill.value);
+        let peopleNumber = parseInt(numberOfPeople.value);
+        if(bill.value === "" || tipPercent === null || numberOfPeople.value === ""){
+            tipAmount.innerHTML = `$0.00`;
+        }else{
+            let totalTip = Number((amount * tipPercent)/peopleNumber).toFixed(2);
+            tipAmount.innerHTML = `$${totalTip}`;
+        }
+    })
+})
+/**------------------------------------------ */
 
 /**Here we have the event listeners */
 
 bill.addEventListener("input",totalPerPerson);
 numberOfPeople.addEventListener("input",totalPerPerson);
+reset.addEventListener("click",function(){
+    tipAmount.innerHTML = `$0.00`;
+    totalAmount.innerHTML = `$0.00`;
+    bill.value = "";
+    numberOfPeople.value = "";
+})
 
 
-fivePercent.addEventListener("click", calculatePercent);
-tenPercent.addEventListener("click", calculatePercent);
-fifteenPercent.addEventListener("click", calculatePercent);
-twentyfivePercent.addEventListener("click", calculatePercent);
-fiftyPercent.addEventListener("click", calculatePercent);
 
 /**-------------------------------------- */
 
